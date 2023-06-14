@@ -31,7 +31,7 @@ const BlogForm = ({ blogCategories, blogsMutate }: BlogFormProps) => {
 
 		for (const key in data) {
 			// @ts-ignore
-			formData.append(key, data[key]);
+			formData.append(key, data[key as keyof FormDataType]);
 		}
 
 		const optimisticBlog: Blog = {
@@ -191,7 +191,7 @@ const BlogForm = ({ blogCategories, blogsMutate }: BlogFormProps) => {
 				</div>
 			</div>
 			<button
-				className="mx-auto block w-fit self-center rounded-full bg-accent px-12 py-2 text-base font-bold text-white"
+				className="mx-auto block w-fit self-center rounded-full bg-accent px-12 py-2 text-base font-bold text-white transition-transform duration-150 hover:scale-[1.03]"
 				type="submit"
 			>
 				Create blog

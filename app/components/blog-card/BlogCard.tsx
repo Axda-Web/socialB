@@ -9,8 +9,8 @@ type BlogCardProps = {
 
 const BlogCard = ({ blog }: BlogCardProps) => {
 	return (
-		// TODO: Check bug link clickable outside of the card + Why inset shadow overlay is not working
-		<article className="h-[263px] w-full shadow-md">
+		// TODO: Check bug link clickable outside of the card
+		<article className="h-[263px] w-full shadow-md transition-transform duration-150 hover:scale-[1.02]">
 			<Link href={`/blogs/${blog.id}`}>
 				<div className="relative z-20 h-[72px] w-full">
 					<Image
@@ -25,7 +25,7 @@ const BlogCard = ({ blog }: BlogCardProps) => {
 						<span>{blog.category.name}</span>
 					</div>
 				</div>
-				{/* TODO: Implement line-clamp for title and content (see openclassroms project) */}
+				{/* TODO: Implement line-clamp for title and content */}
 				<div className="space-y-2 p-4">
 					<h3 className="line-clamp-1 overflow-hidden text-ellipsis text-heading font-bold text-secondary">
 						{blog.title}

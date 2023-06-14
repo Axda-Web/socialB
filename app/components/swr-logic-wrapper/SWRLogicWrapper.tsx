@@ -3,9 +3,9 @@
 import useSWRInfinite from 'swr/infinite';
 import useSWR from 'swr';
 import { Blog } from '@/types';
-import { BlogDataSchema } from '@/models/zod-schema';
 import blogServices from '@/services/blog';
 import categoryServices from '@/services/category';
+import Skeleton from '@mui/material/Skeleton';
 
 import BlogCard from '../blog-card';
 import BlogForm from '../blog-form';
@@ -43,10 +43,14 @@ const SWRLogicWrapper = () => {
 	const isReachingEnd =
 		// @ts-ignore
 		isEmpty || (data && data[data.length - 1]?.length < PAGE_SIZE);
-	// const isRefreshing = isValidating && data && data.length === size;
 
 	if (!blogs || !blogCategories) {
-		return <div>Loading...</div>;
+		return (
+			<div className='sm:p-8" mt-8 grid grid-cols-1 gap-6 px-6 sm:grid-cols-2 sm:bg-[#F4F4F4]'>
+				<Skeleton variant="rectangular" width="100%" height={560} />
+				<Skeleton variant="rectangular" width="100%" height={560} />
+			</div>
+		);
 	}
 
 	return (
@@ -60,7 +64,7 @@ const SWRLogicWrapper = () => {
 					))}
 				</div>
 				<button
-					className="mx-auto block w-fit self-center rounded-full bg-accent px-12 py-2 text-base font-bold text-white"
+					className="mx-auto block w-fit self-center rounded-full bg-accent px-12 py-2 text-base font-bold text-white transition-transform duration-150 hover:scale-[1.03]"
 					type="button"
 					disabled={isLoadingMore || isReachingEnd}
 					onClick={() => setSize(size + 1)}
