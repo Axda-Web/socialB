@@ -1,25 +1,27 @@
-import { BlogCategoriesSchema, BlogCategorySchema } from '@/zod-schema';
-import { BlogCategories, BlogCategory } from '@/types';
+import { CategoryDataSchema } from '@/models/zod-schema';
 
 const BASE_URL = 'https://frontend-case-api.sbdev.nl/api/categories';
+const token = process.env.NEXT_PUBLIC_API_TOKEN;
 
-const getCategories = async (): Promise<BlogCategories> => {
-	const response = await fetch(BASE_URL);
-
-	if (!response.ok) {
-		throw new Error(`${response.status} ${response.statusText}`);
-	}
-
-	const categories = await response.json();
-
-	// TODO: Check the good way of using the schema to check the data
+const getAll = async () => {
 	try {
-		BlogCategoriesSchema.parse(categories);
-	} catch (error) {
-		throw new Error();
-	}
+		const response = await fetch(BASE_URL, {
+			headers: {
+				token: token!
+			}
+		});
 
-	return categories;
+		const json = await response.json();
+		const parsedData = CategoryDataSchema.parse(json);
+		return parsedData;
+	} catch (error) {
+		if (error instanceof Error) console.log(error.stack);
+	}
 };
 
-// TODO: Check if/how I'm gonna use this function
+const categoryServices = {
+	getAll,
+	BASE_URL
+};
+
+export default categoryServices;

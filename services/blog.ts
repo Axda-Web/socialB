@@ -1,69 +1,124 @@
-import { DataSchema, BlogSchema } from '@/zod-schema';
-import { Data, Blog } from '@/types';
+import { BlogDataSchema, BlogSchema, RawDataSchema } from '@/models/zod-schema';
+import { Blog } from '@/types';
 
 const BASE_URL = 'https://frontend-case-api.sbdev.nl/api/posts';
+const token = process.env.NEXT_PUBLIC_API_TOKEN;
 
 type GetBlogsParams = {
 	page?: number;
 	perPage?: number;
-	sortBy?: string;
+	sortBy?: 'created_at' | 'title';
 	sortDirection?: 'asc' | 'desc';
 	searchPhrase?: string;
 	categoryId?: number;
 };
 
-const getBlogs = async ({
+const getRawData = async (id: string | number | undefined) => {
+	try {
+		const response = await fetch(
+			`${BASE_URL}?page=${id}&perPage=8&sortBy=created_at&sortDirection=desc`,
+			{
+				headers: {
+					token: token!
+				}
+			}
+		);
+
+		const json = await response.json();
+		const parsedData = RawDataSchema.parse(json);
+		return parsedData;
+	} catch (error) {
+		if (error instanceof Error) console.log(error.stack);
+	}
+};
+
+const getAllWithParams = async ({
 	page,
 	perPage,
 	sortBy,
 	sortDirection,
 	searchPhrase,
 	categoryId
-}: // TODO: Check the return type (Promise<Data> | Promise<Blog[]>)
-GetBlogsParams): Promise<Data> => {
-	const response = await fetch(
-		`${BASE_URL}?page=${page}&perPage=${perPage}&sortBy=${sortBy}&sortDirection=${sortDirection}&searchPhrase=${searchPhrase}&categoryId=${categoryId}`
-	);
-
-	if (!response.ok) {
-		throw new Error(`${response.status} ${response.statusText}`);
-	}
-
-	const data = await response.json();
-
-	// TODO: Check the good way of using the schema to check the data
+}: GetBlogsParams) => {
 	try {
-		DataSchema.parse(data);
-	} catch (error) {
-		throw new Error();
-	}
+		const response = await fetch(
+			`${BASE_URL}?page=${page}&perPage=${perPage}&sortBy=${sortBy}&sortDirection=${sortDirection}&searchPhrase=${searchPhrase}&categoryId=${categoryId}`,
+			{
+				headers: {
+					token: token!
+				}
+			}
+		);
 
-	return data;
+		const json = await response.json();
+		const parsedData = BlogDataSchema.parse(json.data);
+		return parsedData;
+	} catch (error) {
+		if (error instanceof Error) console.log(error.stack);
+	}
 };
 
-const addBlog = async (blog: Partial<Blog>): Promise<Blog> => {
-	const response = await fetch(BASE_URL, {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify(blog)
-	});
-
-	if (!response.ok) {
-		throw new Error(`${response.status} ${response.statusText}`);
-	}
-
-	const newBlog = await response.json();
-
-	// TODO: Check the good way of using the schema to check the data
+const getAll = async () => {
 	try {
-		BlogSchema.parse(newBlog);
-	} catch (error) {
-		throw new Error();
-	}
+		const response = await fetch(
+			`${BASE_URL}?page=1&perPage=8&sortBy=created_at&sortDirection=desc`,
+			{
+				headers: {
+					token: token!
+				}
+			}
+		);
 
-	return newBlog;
+		const json = await response.json();
+		const parsedData = BlogDataSchema.parse(json.data);
+		return parsedData;
+	} catch (error) {
+		if (error instanceof Error) console.log(error.stack);
+	}
 };
 
-// TODO: Check if I need to implement an other fetching function for pagination
+const getAllInfiniteLoading = async (dynamicUrl: string) => {
+	try {
+		const response = await fetch(dynamicUrl, {
+			headers: {
+				token: token!
+			}
+		});
+
+		const json = await response.json();
+		const parsedData = BlogDataSchema.parse(json.data);
+		return parsedData;
+	} catch (error) {
+		if (error instanceof Error) console.log(error.stack);
+	}
+};
+
+const add = async (formData: FormData) => {
+	try {
+		const response = await fetch(BASE_URL, {
+			method: 'POST',
+			headers: {
+				token: token!
+			},
+			body: formData
+		});
+
+		const newBlog: Blog = await response.json();
+		const parsedNewBlog = BlogSchema.parse(newBlog);
+		return parsedNewBlog;
+	} catch (error) {
+		if (error instanceof Error) console.log(error.stack);
+	}
+};
+
+const blogServices = {
+	getRawData,
+	getAllWithParams,
+	getAll,
+	getAllInfiniteLoading,
+	add,
+	BASE_URL,
+	token
+};
+
+export default blogServices;
