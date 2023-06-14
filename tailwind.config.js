@@ -9,7 +9,7 @@ module.exports = {
 		extend: {
 			colors: {
 				accent: '#F27623',
-				heading: '#262626',
+				secondary: '#262626',
 				paragraph: '#868686'
 			},
 			fontSize: {
@@ -23,4 +23,4 @@ module.exports = {
 	plugins: []
 };
 
-// TODO: Find a free alternative to Proxima Nova font
+// TODO: Find a free alternative to Proxima Nova font + Rename variables properly
