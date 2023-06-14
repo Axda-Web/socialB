@@ -68,7 +68,13 @@ To get started with the SB Assessment project, follow the steps below:
    npm run dev
    ```
 
-A deployed version of the SB Assessment project is available at [example.com](https://example.com).
+A deployed version of the SB Assessment project is available on Vercel at [social-b](https://social-b.vercel.app/).
 
-Note: I would have liked to tackle the testing part with Jest, RTL and Cypress but unfortunately I didn't have enough time.  
-Thanks in advance for your feedback! 🙏
+Note: Although the main functionalities are there, I didn't have the time to completely finish this project unfortunately. Here's a list of things I would have prioritized if I'd had more time:
+
+- Implement testing with Jest, RTL and Cypress
+- Add skeletons and loading spinners for loading states
+- Improve UX by adding transitions/animations on interactive elements
+- Fix little bugs / clean my code
+
+Thanks in advance for your feedback!
