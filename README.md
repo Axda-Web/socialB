@@ -73,7 +73,7 @@ A deployed version of the SB Assessment project is available on Vercel at [socia
 Note: Although the main functionalities are there, I didn't have the time to completely finish this project unfortunately. Here's a list of things I would have prioritized if I'd had more time:
 
 - Implement testing with Jest, RTL and Cypress
-- Add skeletons and loading spinners for loading states
+- Better handling of loading (skeletons - loading spinners) / error / not-found state
 - Improve UX by adding transitions/animations on interactive elements
 - Fix little bugs / clean my code
 

@@ -32,7 +32,6 @@ export async function generateMetadata({
 }
 
 const PaginatedPage = async ({ params: { pageId } }: Params) => {
-	// TODO: Check wich data should be fetched (all blogs from all categories? How to handle the sorting part?) + Implement pagination (use lib + FE swr | BE data fetching)
 	const rawData: Promise<RawData> = blogServices.getRawData(pageId);
 	const pageData = await rawData;
 	const blogs = pageData?.data;
@@ -46,7 +45,7 @@ const PaginatedPage = async ({ params: { pageId } }: Params) => {
 
 	return (
 		<main className="h-full bg-[#F4F4F4] sm:p-12">
-			{/* TODO: Make the grid more dynamic (center the items on every breakpoints) + Remove gray background on small screens */}
+			{/* TODO: Make the grid more dynamic (center the items on every breakpoints) */}
 			<section className="bg-white p-6">
 				<div className="grid-gap-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
 					{blogs.map((blog: Blog) => (

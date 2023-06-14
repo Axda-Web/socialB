@@ -32,7 +32,7 @@ const Header = () => {
 							/>
 						</Link>
 						<button onClick={handleMobileMenuClick}>
-							<MdOutlineClose className="h-8 w-8 fill-white sm:hidden" />
+							<MdOutlineClose className="h-8 w-8 fill-white transition-transform duration-150 hover:scale-[1.03] sm:hidden" />
 						</button>
 					</div>
 					<nav>
@@ -41,7 +41,7 @@ const Header = () => {
 								<Link
 									onClick={handleMobileMenuClick}
 									href="/"
-									className={`text-2xl font-bold text-white decoration-[#F27623] decoration-[3px] underline-offset-4 hover:underline ${activLinkHome}`}
+									className={`text-2xl font-bold text-white decoration-[#F27623] decoration-[3px] underline-offset-4 hover:underline ${activLinkHome} transition-transform duration-150 hover:scale-[1.03]`}
 								>
 									Home
 								</Link>
@@ -50,7 +50,7 @@ const Header = () => {
 								<Link
 									onClick={handleMobileMenuClick}
 									href="/blogs/page/1"
-									className={`text-2xl font-bold text-white decoration-[#F27623] decoration-[3px] underline-offset-4 hover:underline ${activLinkBlogs}`}
+									className={`text-2xl font-bold text-white decoration-[#F27623] decoration-[3px] underline-offset-4 hover:underline ${activLinkBlogs} transition-transform duration-150 hover:scale-[1.03]`}
 								>
 									Blogs
 								</Link>
@@ -70,13 +70,13 @@ const Header = () => {
 					/>
 				</Link>
 				<button onClick={() => setIsMobileMenuOpen(true)}>
-					<GiHamburgerMenu className="h-6 w-6 fill-white sm:hidden" />
+					<GiHamburgerMenu className="h-6 w-6 fill-white transition-transform duration-150 hover:scale-[1.03] sm:hidden" />
 				</button>
 				<ul className="hidden flex-row items-center gap-x-8 sm:flex">
 					<li>
 						<Link
 							href="/"
-							className={`text-link font-bold text-white decoration-[#F27623] decoration-[3px] underline-offset-4 hover:underline ${activLinkHome}`}
+							className={`text-link font-bold text-white decoration-[#F27623] decoration-[3px] underline-offset-4 hover:underline ${activLinkHome} transition-transform duration-150 hover:scale-[1.03]`}
 						>
 							Home
 						</Link>
@@ -84,7 +84,7 @@ const Header = () => {
 					<li>
 						<Link
 							href="/blogs/page/1"
-							className={`text-link font-bold text-white decoration-[#F27623] decoration-[3px] underline-offset-4 hover:underline ${activLinkBlogs}`}
+							className={`text-link font-bold text-white decoration-[#F27623] decoration-[3px] underline-offset-4 hover:underline ${activLinkBlogs} transition-transform duration-150 hover:scale-[1.03]`}
 						>
 							Blogs
 						</Link>
