@@ -58,6 +58,7 @@ To get started with the SB Assessment project, follow the steps below:
 4. Run the project in production mode:
 
    ```shell
+   npm run build
    npm run start
    ```
 
