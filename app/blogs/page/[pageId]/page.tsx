@@ -44,7 +44,7 @@ const PaginatedPage = async ({ params: { pageId } }: Params) => {
 	if (!blogs?.length) return notFound();
 
 	return (
-		<main className="h-full bg-[#F4F4F4] sm:p-12">
+		<main className="bg-[#F4F4F4] sm:max-h-full sm:p-12">
 			{/* TODO: Make the grid more dynamic (center the items on every breakpoints) */}
 			<section className="bg-white p-6">
 				<div className="grid-gap-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
