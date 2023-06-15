@@ -1,4 +1,4 @@
 const BlogPage = () => {
-	return <div>Blog page</div>;
+	return <div className="sm:max-h-full">Blog page</div>;
 };
 export default BlogPage;

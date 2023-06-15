@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
 	return (
-		<div className="h-full sm:bg-[#F4F4F4]">
+		<div className="sm:max-h-full sm:bg-[#F4F4F4]">
 			<SWRLogicWrapper />
 		</div>
 	);
