@@ -25,12 +25,13 @@ const BlogCard = ({ blog }: BlogCardProps) => {
 						<span>{blog.category.name}</span>
 					</div>
 				</div>
-				{/* TODO: Implement line-clamp for title and content */}
 				<div className="space-y-2 p-4">
 					<h3 className="line-clamp-1 overflow-hidden text-ellipsis text-heading font-bold text-secondary">
 						{blog.title}
 					</h3>
-					<p className="text-base font-light text-paragraph">{blog.content}</p>
+					<p className="line-clamp-6 max-h-full text-base font-light text-paragraph">
+						{blog.content}
+					</p>
 				</div>
 			</Link>
 		</article>
