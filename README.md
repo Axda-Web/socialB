@@ -55,14 +55,28 @@ To get started with the SB Assessment project, follow the steps below:
    npm install
    ```
 
-4. Run the project in production mode:
+4. Set up API key config:
+
+- Create an `.env.local` file at the root of the project.
+- Add a variable named `NEXT_PUBLIC_API_TOKEN` to the `.env.local` file.
+- Set the value of `NEXT_PUBLIC_API_TOKEN` to your API token.
+
+  Example:
+
+  ```shell
+  NEXT_PUBLIC_API_TOKEN={your-api-token-here}
+  ```
+
+  Make sure to replace `{your-api-token-here}` with your actual API token.
+
+5. Run the project in production mode:
 
    ```shell
    npm run build
    npm run start
    ```
 
-5. Run the project in development mode:
+6. Run the project in development mode:
 
    ```shell
    npm run dev
