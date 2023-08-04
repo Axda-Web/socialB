@@ -83,12 +83,3 @@ To get started with the SB Assessment project, follow the steps below:
    ```
 
 A deployed version of the SB Assessment project is available on Vercel at [social-b](https://social-b.vercel.app/).
-
-Note: Although the required functionalities are there, I didn't have the time to completely finish this project unfortunately. Here's a list of things I would have prioritized if I'd had more time:
-
-- Implement testing with Jest, RTL and Cypress
-- Better handling of loading (skeletons - loading spinners) / error / not-found state
-- Improve UX by adding transitions/animations on interactive elements
-- Fix little bugs / clean my code
-
-Thanks in advance for your feedback!
