@@ -14,11 +14,9 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<div className="mx-auto flex h-screen w-full max-w-[1440px] flex-col justify-between">
-					<div>
-						<Header />
-						{children}
-					</div>
+				<div className="mx-auto flex w-full flex-col justify-between sm:h-screen sm:min-h-[1000px]">
+					<Header />
+					{children}
 					<Footer />
 				</div>
 			</body>
