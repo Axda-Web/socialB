@@ -20,6 +20,9 @@ const getRawData = async (id: string | number | undefined) => {
 			{
 				headers: {
 					token: token!
+				},
+				next: {
+					tags: ['blog']
 				}
 			}
 		);

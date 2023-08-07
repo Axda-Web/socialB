@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { FormDataSchema } from '@/models/zod-schema';
 import { FormDataType, CategoryData, Category, BlogData } from '@/types';
 import blogServices from '@/services/blog';
+import revalidationService from '@/services/revalidation';
 import { Blog } from '@/types';
 import { AiOutlineExclamationCircle } from 'react-icons/ai';
 
@@ -65,6 +66,7 @@ const BlogForm = ({ blogCategories, blogsMutate }: BlogFormProps) => {
 		try {
 			// @ts-ignore
 			blogsMutate(blogServices.add(formData), addBlogOptions(optimisticBlog));
+			revalidationService.trigger();
 			reset();
 		} catch (error) {
 			// TODO: Display something on the UI when an error happened (maybe a toast?)
@@ -75,7 +77,7 @@ const BlogForm = ({ blogCategories, blogsMutate }: BlogFormProps) => {
 	return (
 		<form
 			onSubmit={handleSubmit(onSubmit)}
-			className="flex flex-col bg-white py-8 sm:h-full sm:justify-between sm:px-6"
+			className="flex flex-col bg-white py-8 sm:shadow sm:h-full sm:justify-between sm:px-6"
 		>
 			<div className="space-y-4">
 				<div className="flex flex-col gap-y-2">

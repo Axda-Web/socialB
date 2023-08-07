@@ -44,19 +44,39 @@ const SWRLogicWrapper = () => {
 		// @ts-ignore
 		isEmpty || (data && data[data.length - 1]?.length < PAGE_SIZE);
 
-	if (!blogs || !blogCategories) {
+	if (isLoading || blogCategoriesLoading) {
 		return (
-			<div className='sm:p-8" mt-8 grid grid-cols-1 gap-6 px-6 sm:grid-cols-2 sm:bg-[#F4F4F4]'>
-				<Skeleton variant="rectangular" width="100%" height={560} />
-				<Skeleton variant="rectangular" width="100%" height={560} />
-			</div>
+			<main className="mx-auto grid max-w-[1440px] grid-cols-1 content-center gap-x-6 px-6 sm:h-full sm:grid-cols-2 sm:px-8">
+				<div className="flex flex-col bg-white py-8 sm:h-full sm:justify-between sm:px-6 sm:shadow">
+					<div className="space-y-8">
+						<div className="animate-pulse bg-[#F2F2F2] p-6" />
+						<div className="animate-pulse bg-[#F2F2F2] p-6" />
+						<div className="animate-pulse bg-[#F2F2F2] p-6" />
+						<div className="p-22 py22 mb-6 animate-pulse bg-[#F2F2F2] sm:mb-0 sm:py-32" />
+					</div>
+					<div className="mx-auto block w-fit animate-pulse self-center rounded-full bg-accent px-20 py-4" />
+				</div>
+				<div className="bg-white px-6 py-8 sm:px-4 sm:shadow">
+					<div className="grid-gap-4 mb-6 grid grid-cols-1 gap-6 sm:h-[556px] sm:grid-cols-2 sm:overflow-y-auto sm:pb-2">
+						<div className="h-[263px] w-full animate-pulse bg-[#F2F2F2] shadow-md" />
+						<div className="h-[263px] w-full animate-pulse bg-[#F2F2F2] shadow-md" />
+						<div className="h-[263px] w-full animate-pulse bg-[#F2F2F2] shadow-md" />
+						<div className="h-[263px] w-full animate-pulse bg-[#F2F2F2] shadow-md" />
+					</div>
+					<div className="mx-auto block w-fit animate-pulse self-center rounded-full bg-accent px-20 py-4" />
+				</div>
+			</main>
 		);
 	}
 
+	if (!data || !blogCategories) {
+		return <h1 className="text-5xl">Error</h1>;
+	}
+
 	return (
-		<main className="grid grid-cols-1 gap-x-6 px-6 sm:grid-cols-2 sm:bg-[#F4F4F4] sm:p-8">
+		<main className="mx-auto grid max-w-[1440px] grid-cols-1 content-center gap-x-6 px-6 sm:h-full sm:grid-cols-2 sm:px-8">
 			<BlogForm blogCategories={blogCategories} blogsMutate={blogsMutate} />
-			<section className="bg-white px-6 py-8 sm:px-4">
+			<section className="bg-white px-6 py-8 sm:px-4 sm:shadow">
 				<div className="grid-gap-4 mb-6 grid grid-cols-1 gap-6 sm:h-[556px] sm:grid-cols-2 sm:overflow-y-auto sm:pb-2">
 					{isEmpty ? <p>No blogs found.</p> : null}
 					{blogs.map((blog: Blog) => (
