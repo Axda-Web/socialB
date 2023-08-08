@@ -1,10 +1,11 @@
 # SB Assessment
 
-![Next.js](https://img.shields.io/badge/Next.js-13.4.4-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.1.3-blue)
-![Zod](https://img.shields.io/badge/Zod-3.21.4-blue)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.3.2-blue)
-![Material UI](https://img.shields.io/badge/Material%20UI-5.13.5-blue)
+[![Next.js](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white&style=flat-square)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white&style=flat-square)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white&style=flat-square)](https://www.typescriptlang.org/)
+[![Zod](https://img.shields.io/badge/Zod-E95950?logo=zod&logoColor=white&style=flat-square)](https://zod.sourceforge.io/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white&style=flat-square)](https://tailwindcss.com/)
+[![Material-UI](https://img.shields.io/badge/Material--UI-0081CB?logo=material-ui&logoColor=white&style=flat-square)](https://mui.com/)   
 
 ![screenshot](/screenshot.jpg)
 
