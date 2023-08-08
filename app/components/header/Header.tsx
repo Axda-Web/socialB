@@ -16,7 +16,7 @@ const Header = () => {
 	const activLinkHome = pathname === '/' ? 'underline' : '';
 	const activLinkBlogs = pathname.includes('/blogs/page/') ? 'underline' : '';
 	return (
-		<header className="relative mx-auto w-full max-w-[1440px] bg-cover bg-center px-6 py-6 sm:px-10">
+		<header className="relative mx-auto w-full max-w-[1440px] bg-cover bg-center px-6 py-6 sm:px-12">
 			{/* TODO: Add mobile menu transition/animation comming for the left|top + Pick the right bg color. */}
 			{isMobileMenuOpen && (
 				<div className="absolute bottom-0 left-0 top-0 z-30 h-52 w-full space-y-6 overflow-hidden bg-secondary p-6">
