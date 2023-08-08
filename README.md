@@ -11,7 +11,7 @@
 
 ## Description
 
-SB Assessment is a project aimed at building a blog using the React ecosystem. This project explores various concepts and features including:
+SocialB is a project aimed at building a blog using Next.js and the React ecosystem. This project explores various concepts and features including:
 
 - Static Site Generation (SSG)
 - Server Side Rendering
