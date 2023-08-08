@@ -6,6 +6,8 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.3.2-blue)
 ![Material UI](https://img.shields.io/badge/Material%20UI-5.13.5-blue)
 
+![screenshot](/screenshot.jpg)
+
 ## Description
 
 SB Assessment is a project aimed at building a blog using the React ecosystem. This project explores various concepts and features including:
