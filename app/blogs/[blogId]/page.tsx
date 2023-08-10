@@ -1,5 +1,10 @@
 import { BsTools } from 'react-icons/bs';
 
+export const metadata = {
+	title: 'Social B | Building in progress',
+	description: 'Building in progress'
+};
+
 const BlogPage = () => {
 	return (
 		<div className="flex flex-col items-center justify-center gap-y-6 sm:mb-72 sm:max-h-full">

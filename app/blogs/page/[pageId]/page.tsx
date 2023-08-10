@@ -26,7 +26,7 @@ export async function generateMetadata({
 	}
 
 	return {
-		title: 'Blogs',
+		title: 'Social B |Blogs',
 		description: 'Read about tech trendind topics'
 	};
 }

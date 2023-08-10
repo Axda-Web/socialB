@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import SWRLogicWrapper from './components/swr-logic-wrapper';
 
 export const metadata: Metadata = {
-	title: 'SB Blog',
+	title: 'Social B | Home',
 	description:
 		'Create your own blog and check the latest news about the tech world'
 };
