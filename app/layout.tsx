@@ -14,7 +14,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<div className="mx-auto flex w-full flex-col justify-between sm:h-screen sm:min-h-[1000px]">
+				<div className="mx-auto flex min-h-screen w-full flex-col justify-between sm:h-screen sm:min-h-[1000px]">
 					<Header />
 					{children}
 					<Footer />
