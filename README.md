@@ -11,7 +11,9 @@
 
 ## Description
 
-SocialB is a project aimed at building a blog using Next.js and the React ecosystem. This project explores various concepts and features including:
+Social B is a project aimed at building a blog using Next.js and the React ecosystem. Secure data with advanced form validation combining React Hook Form & Zod. Optimize SEO using Server Side Rendering & Static Site Generation.   
+
+This project explores various concepts and features including:
 
 - Static Site Generation (SSG)
 - Server Side Rendering
