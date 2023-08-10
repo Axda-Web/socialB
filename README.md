@@ -1,4 +1,4 @@
-# SB Assessment
+# Social B
 
 [![Next.js](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white&style=flat-square)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white&style=flat-square)](https://reactjs.org/)
@@ -38,7 +38,7 @@ and more.
 
 ## Getting Started
 
-To get started with the SB Assessment project, follow the steps below:
+To get started with the Social B project, follow the steps below:
 
 1. Clone the repository:
 
@@ -85,4 +85,4 @@ To get started with the SB Assessment project, follow the steps below:
    npm run dev
    ```
 
-A deployed version of the SB Assessment project is available on Vercel at [social-b](https://social-b.vercel.app/).
+A deployed version of the Social B project is available on Vercel at [Social-B](https://social-b.vercel.app/).
