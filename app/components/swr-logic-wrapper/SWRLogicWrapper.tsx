@@ -76,7 +76,7 @@ const SWRLogicWrapper = () => {
 	return (
 		<main className="mx-auto grid max-w-[1440px] grid-cols-1 content-center gap-x-6 px-6 sm:h-full sm:grid-cols-2 sm:px-8">
 			<BlogForm blogCategories={blogCategories} blogsMutate={blogsMutate} />
-			<section className="bg-white px-6 py-8 sm:px-4 sm:shadow">
+			<section className="bg-white px-0 py-8 sm:px-4 sm:shadow">
 				<div className="grid-gap-4 mb-6 grid grid-cols-1 gap-6 sm:h-[556px] sm:grid-cols-2 sm:overflow-y-auto sm:pb-2">
 					{isEmpty ? <p>No blogs found.</p> : null}
 					{blogs.map((blog: Blog) => (

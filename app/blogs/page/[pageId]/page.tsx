@@ -44,7 +44,7 @@ const PaginatedPage = async ({ params: { pageId } }: Params) => {
 	if (!blogs?.length) return notFound();
 
 	return (
-		<main className="mx-auto flex h-full max-w-[1440px] flex-col items-center justify-center gap-6 sm:gap-12 sm:p-12 sm:pt-0">
+		<main className="mx-auto flex h-full max-w-[1440px] flex-col items-center justify-center gap-6 px-6 sm:gap-12 sm:p-12 sm:px-8 sm:pt-0">
 			<h1 className="text-3xl font-bold text-secondary sm:text-5xl">Blog</h1>
 			<section className="bg-white">
 				<div className="grid-gap-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
